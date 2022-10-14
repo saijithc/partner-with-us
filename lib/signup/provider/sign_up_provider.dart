@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../home/view/home.dart';
 
 class SignUPProvider with ChangeNotifier {

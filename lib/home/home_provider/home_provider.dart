@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-
 import '../../common/cutom_snackbar.dart';
 
 class HomeProvider with ChangeNotifier {

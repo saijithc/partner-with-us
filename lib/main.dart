@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:partnerwithus/google/google.dart';
 import 'package:partnerwithus/signup/provider/sign_up_provider.dart';
 import 'package:provider/provider.dart';
-
 import 'home/home_provider/home_provider.dart';
 import 'login/provider/loginprovider..dart';
 import 'login/view/login.dart';

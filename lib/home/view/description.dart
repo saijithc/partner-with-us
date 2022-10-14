@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
 import '../../common/custom_text.dart';
 import '../../common/textform.dart';
 import '../home_provider/home_provider.dart';
@@ -10,11 +9,9 @@ class Description extends StatelessWidget {
   const Description({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
-    //final w = MediaQuery.of(context).size.width;
     return Consumer<HomeProvider>(
       builder: (context, value, child) {
         return Padding(

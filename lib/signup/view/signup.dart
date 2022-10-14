@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:partnerwithus/google/google.dart';
 import 'package:provider/provider.dart';
-
 import '../../common/textform.dart';
 import '../../login/provider/loginprovider..dart';
 import '../../login/view/login.dart';
@@ -157,7 +155,9 @@ class SignUp extends StatelessWidget {
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.resolveWith(
                                 (states) => Colors.white)),
-                        onPressed: () {},
+                        onPressed: () {
+                          context.read<GoogleProvider>().signIn(context);
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
