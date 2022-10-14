@@ -1,11 +1,9 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:partnerwithus/common/cutom_snackbar.dart';
 import 'package:partnerwithus/home/view/home.dart';
 import 'package:provider/provider.dart';
-
 import '../home/home_provider/home_provider.dart';
 
 class GoogleProvider with ChangeNotifier {
