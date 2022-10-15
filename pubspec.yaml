@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^3.0.1
   hexcolor: ^2.0.7
   google_sign_in: ^5.4.2
+  shared_preferences: ^2.0.15
   # lint: ^1.10.0
 
   

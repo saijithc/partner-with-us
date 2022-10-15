@@ -56,6 +56,7 @@ class UserDetails extends StatelessWidget {
                       height: 10,
                     ),
                     TextFormField(
+                      keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
                       controller: value.numberController,
                       validator: (val) {

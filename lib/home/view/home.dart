@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:partnerwithus/common/popup.dart';
-import 'package:partnerwithus/google/google.dart';
 import 'package:partnerwithus/home/view/user_details.dart';
 import 'package:provider/provider.dart';
-import '../../login/view/login.dart';
 import '../home_provider/home_provider.dart';
 import 'description.dart';
 
@@ -29,19 +27,14 @@ class HomeScreen extends StatelessWidget {
             elevation: 0,
             backgroundColor: Colors.transparent,
             actions: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                    backgroundColor: Colors.red,
-                    child: Center(
-                      child: IconButton(
-                          onPressed: () {
-                            options(context);
-                          },
-                          icon: const Icon(
-                            Icons.power_settings_new_rounded,
-                            size: 30,
-                          )),
+              Center(
+                child: IconButton(
+                    onPressed: () {
+                      options(context);
+                    },
+                    icon: const Icon(
+                      Icons.power_settings_new_outlined,
+                      size: 30,
                     )),
               ),
 

@@ -25,15 +25,19 @@ class HomeProvider with ChangeNotifier {
 
   submit(BuildContext context) {
     if (descriptionFormKey.currentState!.validate()) {
-      addressController.clear();
-      descriptionController.clear();
-      nameController.clear();
-      fssaiController.clear();
-      emailConntroller.clear();
-      numberController.clear();
+      clearTextfields();
       next = !next;
       notifyListeners();
       customSnackBar(context, "Form successfully submitted");
     }
+  }
+
+  clearTextfields() {
+    addressController.clear();
+    descriptionController.clear();
+    nameController.clear();
+    fssaiController.clear();
+    emailConntroller.clear();
+    numberController.clear();
   }
 }

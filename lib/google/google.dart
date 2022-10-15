@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:partnerwithus/common/cutom_snackbar.dart';
+import 'package:partnerwithus/helperfunction/helper_function.dart';
 import 'package:partnerwithus/home/view/home.dart';
 import 'package:provider/provider.dart';
 import '../home/home_provider/home_provider.dart';
@@ -12,10 +13,13 @@ class GoogleProvider with ChangeNotifier {
       GoogleSignInApi.login().then((value) {
         log(value.toString());
         if (value != null) {
+          context.read<HelperFuction>().saveUserLogged(true);
           context.read<HomeProvider>().emailConntroller.text = value.email;
           context.read<HomeProvider>().nameController.text = value.displayName!;
-          Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (ctx) => const HomeScreen()));
+          Navigator.pushAndRemoveUntil(context,
+              MaterialPageRoute(builder: (ctx) {
+            return const HomeScreen();
+          }), (route) => false);
           log(value.toString());
         }
       });

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:partnerwithus/google/google.dart';
+import 'package:partnerwithus/helperfunction/helper_function.dart';
+import 'package:partnerwithus/home/home_provider/home_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../login/view/login.dart';
 
@@ -36,11 +39,13 @@ options(BuildContext context) {
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(primary: Colors.red),
                           onPressed: () {
+                            context.read<HelperFuction>().saveUserLogged(false);
+                            context.read<HomeProvider>().clearTextfields();
                             GoogleSignInApi.logout();
-
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (ctx) => const LoginScreen()));
+                            Navigator.pushAndRemoveUntil(context,
+                                MaterialPageRoute(builder: (ctx) {
+                              return const LoginScreen();
+                            }), (route) => false);
                           },
                           child: const Text("Logout")),
                     ),
