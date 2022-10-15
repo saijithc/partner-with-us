@@ -39,6 +39,7 @@ options(BuildContext context) {
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(primary: Colors.red),
                           onPressed: () {
+                            context.read<HomeProvider>().next = false;
                             context.read<HelperFuction>().saveUserLogged(false);
                             context.read<HomeProvider>().clearTextfields();
                             GoogleSignInApi.logout();
